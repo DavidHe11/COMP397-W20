@@ -16,7 +16,6 @@ var scenes;
 (function (scenes) {
     var Play = /** @class */ (function (_super) {
         __extends(Play, _super);
-        // PRIVATE INSTANCE MEMBERS
         // PUBLIC PROPERTIES
         // CONSTRUCTOR
         function Play() {
@@ -25,14 +24,33 @@ var scenes;
             return _this;
         }
         // PRIVATE METHODS
+        Play.prototype.rollDice = function () {
+            this.dieResult1 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
+            this.dieResult2 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
+        };
+        //displays the results
+        Play.prototype.displayResult = function () {
+            this._dieLabel1 = new objects.Label(this.dieResult1.toString(), "18px", "Consolas", "#000000", 240, 120, false);
+            this._dieLabel2 = new objects.Label(this.dieResult2.toString(), "18px", "Consolas", "#000000", 400, 120, false);
+        };
         // PUBLIC METHODS
         //initialize and instatiate
         Play.prototype.Start = function () {
+            this._rollButton = new objects.Button(config.Game.ASSETS.getResult("rollButton"), 320, 430, true);
             this.Main();
         };
-        Play.prototype.Update = function () {
-        };
+        Play.prototype.Update = function () { };
         Play.prototype.Main = function () {
+            var _this = this;
+            this.addChild(this._rollButton);
+            this.addChild(this._die1);
+            this.addChild(this._die2);
+            this.addChild(this._dieLabel1);
+            this.addChild(this._dieLabel2);
+            this._rollButton.on("click", function () {
+                _this.rollDice();
+                _this.displayResult();
+            });
         };
         return Play;
     }(objects.Scene));

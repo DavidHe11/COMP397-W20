@@ -2,8 +2,8 @@ module scenes {
   export class Play extends objects.Scene {
     // PRIVATE INSTANCE MEMBERS
     private _rollButton: objects.Button;
-    private _die1: objects.GameObject;
-    private _die2: objects.GameObject;
+    private _die1: objects.Image;
+    private _die2: objects.Image;
     private _dieLabel1: objects.Label;
     private _dieLabel2: objects.Label;
     private dieResult1: number;
@@ -19,8 +19,8 @@ module scenes {
 
     // PRIVATE METHODS
     private rollDice(): void {
-      this.dieResult1 = util.Mathf.RandomRange(1, 6);
-      this.dieResult2 = util.Mathf.RandomRange(1, 6);
+      this.dieResult1 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
+      this.dieResult2 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
     }
 
     //displays the results
@@ -42,6 +42,19 @@ module scenes {
         "#000000",
         400,
         120,
+        false
+      );
+
+      this._die1 = new objects.Image(
+        config.Game.ASSETS.getResult(this.dieResult1.toString()),
+        240,
+        160,
+        false
+      );
+      this._die2 = new objects.Image(
+        config.Game.ASSETS.getResult(this.dieResult2.toString()),
+        400,
+        160,
         false
       );
     }
