@@ -2,12 +2,15 @@ module scenes {
   export class Play extends objects.Scene {
     // PRIVATE INSTANCE MEMBERS
     private _rollButton: objects.Button;
+
     private _die1: objects.Image;
     private _die2: objects.Image;
+    /*
     private _dieLabel1: objects.Label;
     private _dieLabel2: objects.Label;
     private dieResult1: number;
     private dieResult2: number;
+    */
     // PUBLIC PROPERTIES
 
     // CONSTRUCTOR
@@ -18,6 +21,7 @@ module scenes {
     }
 
     // PRIVATE METHODS
+    /*
     private rollDice(): void {
       this.dieResult1 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
       this.dieResult2 = util.Mathf.Clamp(util.Mathf.RandomRange(1, 6), 1, 6);
@@ -58,7 +62,7 @@ module scenes {
         false
       );
     }
-
+    */
     // PUBLIC METHODS
 
     //initialize and instatiate
@@ -77,15 +81,17 @@ module scenes {
 
     public Main(): void {
       this.addChild(this._rollButton);
+      /*
       this.addChild(this._die1);
       this.addChild(this._die2);
       this.addChild(this._dieLabel1);
       this.addChild(this._dieLabel2);
-
+        
       this._rollButton.on("click", () => {
         this.rollDice();
         this.displayResult();
       });
+      */
     }
   }
 }

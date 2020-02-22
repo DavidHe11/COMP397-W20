@@ -3,7 +3,7 @@
 //means -> self-executing anonymous function
 var Game = (function () {
     // variable declarations
-    var canvas = document.getElementsByTagName('canvas')[0];
+    var canvas = document.getElementsByTagName("canvas")[0];
     var stage;
     var currentSceneState;
     var currentScene;
@@ -12,8 +12,15 @@ var Game = (function () {
         { id: "button", src: "./Assets/images/button.png" },
         { id: "placeholder", src: "./Assets/images/placeholder.png" },
         { id: "startButton", src: "./Assets/images/startButton.png" },
+        { id: "rollButton", src: "./Assets/images/rollButton.png" },
         { id: "nextButton", src: "./Assets/images/nextButton.png" },
         { id: "backButton", src: "./Assets/images/backButton.png" },
+        { id: "1", src: "./Assets/images/1.png" },
+        { id: "2", src: "./Assets/images/2.png" },
+        { id: "3", src: "./Assets/images/3.png" },
+        { id: "4", src: "./Assets/images/4.png" },
+        { id: "5", src: "./Assets/images/5.png" },
+        { id: "6", src: "./Assets/images/6.png" },
         { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "plane", src: "./Assets/images/plane.png" }
     ];
@@ -32,7 +39,7 @@ var Game = (function () {
         console.log("%c Game Started!", "color: blue; font-size: 20px; font-weight: bold;");
         stage = new createjs.Stage(canvas);
         createjs.Ticker.framerate = config.Game.FPS;
-        createjs.Ticker.on('tick', Update);
+        createjs.Ticker.on("tick", Update);
         stage.enableMouseOver(20);
         currentSceneState = scenes.State.NO_SCENE;
         config.Game.SCENE = scenes.State.START;
@@ -77,6 +84,6 @@ var Game = (function () {
         currentSceneState = config.Game.SCENE;
         stage.addChild(currentScene);
     }
-    window.addEventListener('load', Preload);
+    window.addEventListener("load", Preload);
 })();
 //# sourceMappingURL=game.js.map
