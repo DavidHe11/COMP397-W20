@@ -1,4 +1,10 @@
 "use strict";
+/*
+Play.ts
+David He 300844568
+Feb 22, 2020
+Creates two rolls with dice.
+*/
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -30,10 +36,13 @@ var scenes;
         };
         //displays the results
         Play.prototype.displayResult = function () {
-            this._dieLabel1 = new objects.Label(this.dieResult1.toString(), "18px", "Consolas", "#000000", 185, 160, false);
-            this._dieLabel2 = new objects.Label(this.dieResult2.toString(), "18px", "Consolas", "#000000", 400, 160, false);
-            this._die1 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult1.toString()), 180, 120, false);
-            this._die2 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult2.toString()), 400, 120, false);
+            //remove child if they already exist
+            this.removeChild(this._dieLabel1);
+            this.removeChild(this._dieLabel2);
+            this._dieLabel1 = new objects.Label(this.dieResult1.toString(), "24px", "Consolas", "#000000", 155, 280, false);
+            this._dieLabel2 = new objects.Label(this.dieResult2.toString(), "24px", "Consolas", "#000000", 460, 280, false);
+            this._die1 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult1.toString()), 60, 70, false);
+            this._die2 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult2.toString()), 370, 70, false);
             this.addChild(this._die1);
             this.addChild(this._die2);
             this.addChild(this._dieLabel1);
@@ -49,6 +58,10 @@ var scenes;
         Play.prototype.Main = function () {
             var _this = this;
             this.addChild(this._rollButton);
+            this.addChild(this._die1);
+            this.addChild(this._die2);
+            this.addChild(this._dieLabel1);
+            this.addChild(this._dieLabel2);
             this._rollButton.on("click", function () {
                 _this.rollDice();
                 _this.displayResult();

@@ -1,4 +1,10 @@
 "use strict";
+/*
+Play.ts
+David He 300844568
+Feb 22, 2020
+Creates an image.
+*/
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||

@@ -1,3 +1,10 @@
+/*
+Play.ts
+David He 300844568
+Feb 22, 2020
+Creates two rolls with dice.
+*/
+
 module scenes {
   export class Play extends objects.Scene {
     // PRIVATE INSTANCE MEMBERS
@@ -29,36 +36,40 @@ module scenes {
 
     //displays the results
     private displayResult(): void {
+      //remove child if they already exist
+      this.removeChild(this._dieLabel1);
+      this.removeChild(this._dieLabel2);
+
       this._dieLabel1 = new objects.Label(
         this.dieResult1.toString(),
-        "18px",
+        "24px",
         "Consolas",
         "#000000",
-        85,
-        160,
+        155,
+        280,
         false
       );
 
       this._dieLabel2 = new objects.Label(
         this.dieResult2.toString(),
-        "18px",
+        "24px",
         "Consolas",
         "#000000",
-        400,
-        160,
+        460,
+        280,
         false
       );
 
       this._die1 = new objects.Image(
         config.Game.ASSETS.getResult(this.dieResult1.toString()),
-        80,
-        120,
+        60,
+        70,
         false
       );
       this._die2 = new objects.Image(
         config.Game.ASSETS.getResult(this.dieResult2.toString()),
-        400,
-        120,
+        370,
+        70,
         false
       );
 
@@ -86,6 +97,10 @@ module scenes {
 
     public Main(): void {
       this.addChild(this._rollButton);
+      this.addChild(this._die1);
+      this.addChild(this._die2);
+      this.addChild(this._dieLabel1);
+      this.addChild(this._dieLabel2);
 
       this._rollButton.on("click", () => {
         this.rollDice();

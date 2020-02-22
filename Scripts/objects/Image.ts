@@ -1,3 +1,10 @@
+/*
+Play.ts
+David He 300844568
+Feb 22, 2020
+Creates an image.
+*/
+
 module objects {
   export class Image extends GameObject {
     // constructor
