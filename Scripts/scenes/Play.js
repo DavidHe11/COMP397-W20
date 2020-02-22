@@ -30,10 +30,10 @@ var scenes;
         };
         //displays the results
         Play.prototype.displayResult = function () {
-            this._dieLabel1 = new objects.Label(this.dieResult1.toString(), "18px", "Consolas", "#000000", 240, 120, false);
-            this._dieLabel2 = new objects.Label(this.dieResult2.toString(), "18px", "Consolas", "#000000", 400, 120, false);
-            this._die1 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult1.toString()), 240, 160, false);
-            this._die2 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult2.toString()), 400, 160, false);
+            this._dieLabel1 = new objects.Label(this.dieResult1.toString(), "18px", "Consolas", "#000000", 185, 160, false);
+            this._dieLabel2 = new objects.Label(this.dieResult2.toString(), "18px", "Consolas", "#000000", 400, 160, false);
+            this._die1 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult1.toString()), 180, 120, false);
+            this._die2 = new objects.Image(config.Game.ASSETS.getResult(this.dieResult2.toString()), 400, 120, false);
             this.addChild(this._die1);
             this.addChild(this._die2);
             this.addChild(this._dieLabel1);

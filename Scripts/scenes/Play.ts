@@ -34,8 +34,8 @@ module scenes {
         "18px",
         "Consolas",
         "#000000",
-        240,
-        120,
+        85,
+        160,
         false
       );
 
@@ -45,20 +45,20 @@ module scenes {
         "Consolas",
         "#000000",
         400,
-        120,
+        160,
         false
       );
 
       this._die1 = new objects.Image(
         config.Game.ASSETS.getResult(this.dieResult1.toString()),
-        240,
-        160,
+        80,
+        120,
         false
       );
       this._die2 = new objects.Image(
         config.Game.ASSETS.getResult(this.dieResult2.toString()),
         400,
-        160,
+        120,
         false
       );
 
