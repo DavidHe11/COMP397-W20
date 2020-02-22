@@ -26,9 +26,11 @@ module objects {
     /**
      * This function is used for initialization
      *
-     * @memberof Button
+     * @memberof Image
      */
-    public Start(): void {}
+    public Start(): void {
+      this.name = "Image";
+    }
 
     public Update(): void {}
 

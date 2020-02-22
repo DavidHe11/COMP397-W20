@@ -18,7 +18,7 @@ var objects;
         __extends(Image, _super);
         // constructor
         function Image(imagePath, x, y, isCentered) {
-            if (imagePath === void 0) { imagePath = config.Game.ASSETS.getResult("button"); }
+            if (imagePath === void 0) { imagePath = config.Game.ASSETS.getResult("blank"); }
             if (x === void 0) { x = 0; }
             if (y === void 0) { y = 0; }
             if (isCentered === void 0) { isCentered = false; }
@@ -38,9 +38,11 @@ var objects;
         /**
          * This function is used for initialization
          *
-         * @memberof Button
+         * @memberof Image
          */
-        Image.prototype.Start = function () { };
+        Image.prototype.Start = function () {
+            this.name = "Image";
+        };
         Image.prototype.Update = function () { };
         Image.prototype.Reset = function () { };
         return Image;
